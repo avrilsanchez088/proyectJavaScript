@@ -3,9 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
+.botonAgregarCarrito {
+  background-color: #4CAF50;
+}
 
 body{
-  background-image: url(../assets/img/fascinante-vista-montana-sassolungo-italia.jpg);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
