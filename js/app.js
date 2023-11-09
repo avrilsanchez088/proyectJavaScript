@@ -1,32 +1,27 @@
-const productos = [
-    { id: 1, nombre: "Power Drink Cibeles", precio: 990, imagen: `../assets/img/powerdrink-cibeles.jpg` },
-    { id: 2, nombre: "Drink Mix Fresa", precio: 1980, imagen: `../assets/img/drink-mix-fresa.jpg` },
-    { id: 3, nombre: "Pure BCAA USN", precio: 1390, imagen: `../assets/img/pure-bcaa-usn.jpg` },
-    { id: 4, nombre: "Energy Gel WOC", precio: 230, imagen: `../assets/img/energy-gel-woc.jpg` },
-    { id: 5, nombre: "Pure BCAA USN", precio: 1390, imagen: `../assets/img/pure-bcaa-usn.jpg` },
-    { id: 6, nombre: "Power Drink Cibeles", precio: 990, imagen: `../assets/img/powerdrink-cibeles.jpg` },
-    { id: 7, nombre: "Whey Protein USN", precio: 2100, imagen: `../assets/img/USN_choco.2kg.jpg` },
-    { id: 8, nombre: "Pure BCAA USN", precio: 1390, imagen: `../assets/img/pure-bcaa-usn.jpg` },
-    { id: 9, nombre: "Energy Gel WOC", precio: 230, imagen: `../assets/img/energy-gel-woc.jpg` },
-    { id: 10, nombre: "Drink Mix Fresa", precio: 1980, imagen: `../assets/img/drink-mix-fresa.jpg` },
-];
 
+
+
+let productos = [];
 let carrito = [];
-mostrarProductos();
+
+async function obtenerProductos() {
+    const response = await fetch('../productos.json');
+    if (response.ok) {
+        productos = await response.json();
+        return productos;
+    }
+}
+
+async function iniciar() {
+    await obtenerProductos(); 
+    mostrarProductos();
+}
+
+iniciar(); 
 
 function guardarCarritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
-
-function cargarCarritoDesdeLocalStorage() {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-        carrito = JSON.parse(carritoGuardado);
-        mostrarCarrito();
-    }
-}
-
-cargarCarritoDesdeLocalStorage();
 
 function mostrarProductos() {
     const productosDiv = document.getElementById('productos');
@@ -126,6 +121,7 @@ function mostrarCarrito() {
         });
     });
 }
+
 
 mostrarProductos();
 

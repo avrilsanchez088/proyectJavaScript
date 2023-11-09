@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="estilos.css">
+
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
         .card {
             border: 1px solid #ccc;
             padding: 10px;
@@ -15,64 +20,73 @@
             display: inline-block;
             width: 200px;
             border-radius: 10px;
-            
+
         }
-        .Img{
+
+        .Img {
             height: 150px;
             height: 150px;
         }
-        .titulo{
+
+        .titulo {
             font-family: 'Exo 2', sans-serif;
             font-size: 50px;
         }
-        #productos{
+
+        #productos {
             font-family: 'Exo 2', sans-serif;
         }
-        body{
+
+        body {
             background-color: rgba(180, 206, 229, 0.766);
         }
-        .card{
+
+        .card {
             background-color: white;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        h2{
+
+        h2 {
             font-family: 'Exo 2', sans-serif;
         }
-        .textCarrito{
+
+        .textCarrito {
             font-family: 'Exo 2', sans-serif;
         }
-        button{
+
+        button {
             font-family: 'Exo 2', sans-serif;
         }
     </style>
 </head>
+
 <body>
     <h1 class="titulo">Tienda</h1>
     <main>
         <div id="productos">
-           
-            
-
+            <!-- Aquí se mostrarán los productos -->
         </div>
-    
+
         <h2>Carrito:</h2>
         <ul id="carrito">
-            
+            <!-- Aquí se mostrará el contenido del carrito -->
         </ul>
-    
+
         <p class="textCarrito">El total de su carrito es de: $<span id="total">0</span></p>
-        <button id="vaciarCarrito" onclick="vaciarCarrito()">Vaciar Carrito</button>
-
-
+        <button id="vaciarCarrito">Vaciar Carrito</button>
     </main>
     <footer>
 
     </footer>
+    <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js"></script>
 
-    <script src="/js/app.js"></script>
+   
+
 </body>
+
 </html>
